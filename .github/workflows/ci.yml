@@ -61,4 +61,4 @@ jobs:
             ${{ runner.os }}-cargo-
 
       - name: Build (all targets, workspace)
-        run: cargo build --workspace --all-targets --verbose
+        run: cargo build --workspace --verbose

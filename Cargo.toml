@@ -1,5 +1,23 @@
 
 [workspace]
-members = []
+members = ["bins/relayer","crates/config","crates/db", "crates/routes"]
 
 [workspace.dependencies]
+config = { path = "./crates/config" }
+db = { path = "./crates/db" }
+routes = { path = "./crates/routes" }
+tokio = { version = "1.48.0", features = ["full"]} # the asynchronous crate to perform asynchronous tasks
+alloy = { version = "1.1.0" , features = [] }  # a crate provided by alloy-rs team, it is a collection of crates
+#tower = "0.5.2" # provides middleware
+tower-http = "0.6.6" # provides middlewares we can possibly think of , like the cors, rate limiters, a fork of the tower
+chrono = { version = "0.4.42", features = ["serde"] }  #date and time crate in rust
+axum = "0.8.6"
+dotenvy = "0.15.7" # environment variables crate
+postgres = "0.19.12" # sql database to store the relayer data
+serde = "1.0.228" # a crate to serialize and deserialize data
+serde_json = "1.0.145"
+anyhow = "1.0.100" # a crate built on std::io::Error to handle errors
+futures = "0.3.31" # a crate to handle asychronous tasks
+futures-util = "0.3.31"
+tracing = "0.1.41" # a crate that can be used used for debugging
+sqlx = { version =" 0.8.6", features = ["postgres", "chrono", "runtime-tokio", "macros", "json", "uuid"]}
