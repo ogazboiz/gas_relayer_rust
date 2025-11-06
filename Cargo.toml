@@ -1,9 +1,11 @@
 
 [workspace]
-members = ["crates/config","crates/db"]
+members = ["bins/relayer","crates/config","crates/db", "crates/routes"]
 
 [workspace.dependencies]
 config = { path = "./crates/config" }
+db = { path = "./crates/db" }
+routes = { path = "./crates/routes" }
 tokio = { version = "1.48.0", features = ["full"]} # the asynchronous crate to perform asynchronous tasks
 alloy = { version = "1.1.0" , features = [] }  # a crate provided by alloy-rs team, it is a collection of crates
 #tower = "0.5.2" # provides middleware

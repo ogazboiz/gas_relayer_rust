@@ -1,0 +1,11 @@
+[package]
+name = "routes"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+axum.workspace = true
+config.workspace = true
+db.workspace = true
+anyhow.workspace = true
+tokio.workspace = true
