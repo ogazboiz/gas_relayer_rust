@@ -1,11 +1,11 @@
-
 [workspace]
-members = ["bins/relayer","crates/config","crates/db", "crates/routes"]
+members = ["bins/relayer","crates/config","crates/db", "crates/routes", "crates/metrics"]
 
 [workspace.dependencies]
 config = { path = "./crates/config" }
 db = { path = "./crates/db" }
 routes = { path = "./crates/routes" }
+metrics = { path = "./crates/metrics" }
 tokio = { version = "1.48.0", features = ["full"]} # the asynchronous crate to perform asynchronous tasks
 alloy = { version = "1.1.0" , features = [] }  # a crate provided by alloy-rs team, it is a collection of crates
 #tower = "0.5.2" # provides middleware
@@ -20,4 +20,9 @@ anyhow = "1.0.100" # a crate built on std::io::Error to handle errors
 futures = "0.3.31" # a crate to handle asychronous tasks
 futures-util = "0.3.31"
 tracing = "0.1.41" # a crate that can be used used for debugging
+tracing-subscriber = { version = "0.3.18", features = ["env-filter", "json"] }
+prometheus = "0.13.4"
+axum-prometheus = "0.7.0"
+metrics-crate = { package = "metrics", version = "0.23.0" }
+metrics-prometheus = "0.7.0"
 sqlx = { version =" 0.8.6", features = ["postgres", "chrono", "runtime-tokio", "macros", "json", "uuid"]}
